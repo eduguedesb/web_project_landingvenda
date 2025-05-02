@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produto Incrível | Oferta Especial</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #f59e42;
+      --background: #f7f8fa;
+      --text: #22223b;
+      --white: #fff;
+      --gray: #e0e0e0;
+      --shadow: 0 6px 32px rgba(76, 81, 255, 0.07);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--background);
+      font-family: 'Montserrat', Arial, sans-serif;
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      padding: 36px 40px 32px 40px;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.2s cubic-bezier(.6, .2, .1, 1);
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(40px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+
+    .header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .main-img {
+      width: 340px;
+      max-width: 95vw;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(79,70,229,0.10);
+      animation: zoomIn 1.1s cubic-bezier(.6, .2, .1, 1);
+    }
+
+    @keyframes zoomIn {
+      0% { opacity: 0; transform: scale(0.8);}
+      100% { opacity: 1; transform: scale(1);}
+    }
+
+    .info {
+      flex: 1;
+      min-width: 260px;
+    }
+
+    .title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+      animation: fadeIn 1.3s;
+    }
+
+    .subtitle {
+      font-size: 1.18rem;
+      color: var(--secondary);
+      margin-bottom: 18px;
+      font-weight: 600;
+      animation: fadeIn 1.6s;
+    }
+
+    .desc {
+      font-size: 1.07rem;
+      margin-bottom: 18px;
+      animation: fadeIn 1.8s;
+    }
+
+    .benefits {
+      margin: 0 0 18px 0;
+      padding: 0;
+      list-style: none;
+      color: var(--text);
+      font-size: 1.04rem;
+      animation: fadeIn 2s;
+    }
+
+    .benefits li {
+      margin-bottom: 8px;
+      padding-left: 22px;
+      position: relative;
+    }
+
+    .benefits li:before {
+      content: "★";
+      color: var(--secondary);
+      position: absolute;
+      left: 0;
+      font-size: 1.1em;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% { color: var(--secondary);}
+      100% { color: var(--primary);}
+    }
+
+    /* Video Section */
+    .video-section {
+      margin: 32px 0 18px 0;
+      text-align: center;
+      animation: fadeIn 1.8s;
+    }
+    .video-section iframe {
+      width: 100%;
+      max-width: 520px;
+      height: 292px;
+      border-radius: 12px;
+      border: none;
+      box-shadow: 0 2px 16px rgba(79,70,229,0.13);
+      transition: box-shadow 0.3s;
+    }
+    .video-section iframe:hover {
+      box-shadow: 0 6px 32px rgba(79,70,229,0.22);
+    }
+
+    /* CTA Button */
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--primary) 60%, var(--secondary) 100%);
+      color: var(--white);
+      border: none;
+      padding: 18px 48px;
+      border-radius: 8px;
+      font-size: 1.28rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 12px rgba(79,70,229,0.11);
+      margin: 18px 0 0 0;
+      letter-spacing: 1px;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.18s, box-shadow 0.18s;
+      animation: fadeInUp 1.6s;
+    }
+    .cta-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 8px 32px rgba(245,158,66,0.18);
+      background: linear-gradient(90deg, var(--secondary) 20%, var(--primary) 100%);
+    }
+    .cta-btn:after {
+      content: "→";
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.3em;
+      opacity: 0.6;
+      transition: right 0.2s;
+    }
+    .cta-btn:hover:after {
+      right: 16px;
+      opacity: 1;
+    }
+
+    /* Testimonial Section */
+    .testimonials {
+      margin: 42px 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      justify-content: center;
+      animation: fadeIn 2.2s;
+    }
+    .testimonial {
+      background: #f4f3ff;
+      border-left: 5px solid var(--primary);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(79,70,229,0.07);
+      padding: 18px 22px;
+      max-width: 310px;
+      font-size: 1.01rem;
+      color: #444;
+      position: relative;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .testimonial:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 6px 24px rgba(79,70,229,0.13);
+    }
+    .testimonial .author {
+      margin-top: 10px;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 1.05em;
+    }
+
+    /* Social Proof */
+    .social-proof {
+      margin: 28px 0 0 0;
+      text-align: center;
+      color: var(--secondary);
+      font-size: 1.07rem;
+      font-weight: 600;
+      animation: fadeIn 2.4s;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        padding: 18px 6vw 18px 6vw;
+      }
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .main-img {
+        margin-bottom: 18px;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px 2vw 10px 2vw;
+      }
+      .title {
+        font-size: 1.5rem;
+      }
+      .cta-btn {
+        font-size: 1.08rem;
+        padding: 14px 24px;
+      }
+      .video-section iframe {
+        height: 180px;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0;}
+      100% { opacity: 1;}
+    }
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px);}
+      100% { opacity: 1; transform: translateY(0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img class="main-img" src="../img/img2.png" alt="Produto em destaque">
+      <div class="info">
+        <div class="title">Transforme Seu Dia com o Produto Incrível</div>
+        <div class="subtitle">Oferta Especial de Lançamento: só hoje!</div>
+        <div class="desc">
+          Descubra como nosso produto pode revolucionar sua rotina, trazendo praticidade, inovação e resultados reais para o seu dia a dia.
+        </div>
+        <ul class="benefits">
+          <li>Resultados comprovados por centenas de clientes</li>
+          <li>Design moderno e fácil de usar</li>
+          <li>Garantia de satisfação ou seu dinheiro de volta</li>
+          <li>Entrega rápida para todo o Brasil</li>
+        </ul>
+        <a href="#compra" class="cta-btn">Comprar Agora</a>
+      </div>
+    </div>
+
+    <div class="video-section">
+      <h2 style="font-size:1.3rem;color:var(--primary);margin-bottom:10px;">Veja o Produto em Ação</h2>
+      <iframe src="../mp4/vid01.mp4" allowfullscreen title="Demonstração do Produto"></iframe>
+    </div>
+
+    <div class="social-proof">
+      <span>Mais de <strong>2.500</strong> clientes satisfeitos! <span style="font-size:1.2em;">⭐️⭐️⭐️⭐️⭐️</span></span>
+    </div>
+
+    <div class="testimonials">
+      <div class="testimonial">
+        “O produto superou minhas expectativas! Uso todos os dias e recomendo para todos.”<br>
+        <span class="author">– João Pedro</span>
+      </div>
+      <div class="testimonial">
+        “Atendimento excelente e entrega rápida. Já virei cliente fiel!”<br>
+        <span class="author">– Larissa M.</span>
+      </div>
+      <div class="testimonial">
+        “Vale cada centavo. Prático, bonito e realmente faz diferença!”<br>
+        <span class="author">– Carlos Silva</span>
+      </div>
+    </div>
+
+    <!-- Seção de Compra -->
+    <div id="compra" style="margin:48px auto 0 auto;max-width:400px;text-align:center;animation:fadeInUp 2.2s;">
+      <h2 style="color:var(--primary);margin-bottom:10px;">Garanta o Seu Agora</h2>
+      <form style="display:flex;flex-direction:column;gap:14px;" onsubmit="event.preventDefault();alert('Compra realizada com sucesso! Em breve você receberá um e-mail de confirmação.');this.reset();">
+        <input type="text" placeholder="Nome completo" required style="padding:12px;border-radius:6px;border:1px solid #ccc;font-size:1rem;">
+        <input type="email" placeholder="Seu e-mail" required style="padding:12px;border-radius:6px;border:1px solid #ccc;font-size:1rem;">
+        <input type="text" placeholder="Endereço para entrega" required style="padding:12px;border-radius:6px;border:1px solid #ccc;font-size:1rem;">
+        <button type="submit" class="cta-btn" style="margin-top:8px;">Finalizar Compra</button>
+      </form>
+      <div style="margin-top:10px;color:#888;font-size:0.95rem;">Pagamento 100% seguro • Suporte via WhatsApp</div>
+    </div>
+  </div>
+</body>
+</html>
